@@ -1,3 +1,4 @@
+import ProductVisual from "../../../components/ProductVisual";
 import Link from "next/link";
 import {notFound} from "next/navigation";
 import {ArrowRight,ExternalLink,Scale,ShieldCheck,Info} from "lucide-react";
@@ -13,7 +14,7 @@ export default function ProductPage({params}:{params:{id:string}}){
   <div className="mx-auto max-w-6xl px-5 py-10 sm:py-16">
    <nav className="fh-muted mb-8 flex flex-wrap items-center gap-2 text-sm"><Link href="/">דף הבית</Link><span>/</span><Link href="/#categories">{product.category}</Link><span>/</span><span>{product.name}</span></nav>
    <div className="grid items-start gap-8 lg:grid-cols-2">
-    <div className="fh-product-visual flex min-h-[280px] items-center justify-center rounded-3xl border text-8xl sm:min-h-[400px]" style={{borderColor:"var(--border)"}}><span role="img" aria-label={product.category}>{product.emoji}</span></div>
+    <ProductVisual src={product.imageUrl} emoji={product.emoji} name={product.name} className="fh-product-visual grid h-[300px] place-items-center rounded-3xl border text-8xl sm:h-[420px]"/>
     <div><span className="fh-kicker text-sm font-bold">{product.brand} · {product.category}</span><h1 className="mt-3 text-3xl font-black leading-tight sm:text-5xl">{product.name}</h1><p className="fh-muted mt-5 text-base leading-8">{product.description||"מידע ומפרט טכני על המוצר"}</p><div className="fh-filter-bar mt-7 rounded-2xl border p-5"><div className="flex items-start gap-3"><Info className="fh-accent mt-1 shrink-0" size={21}/><div><h2 className="font-bold">מחיר בחנויות: טרם זמין</h2><p className="fh-muted mt-2 text-sm leading-6">FindHub עדיין לא מחובר למקורות מחירים בזמן אמת. לא נציג מחירים לא מאומתים.</p></div></div></div>
     <div className="mt-6 flex flex-wrap gap-3">{product.sourceUrl&&<a className="fh-search-action inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold" href={product.sourceUrl} target="_blank" rel="noopener noreferrer"><ExternalLink size={17}/> מפרט באתר היצרן</a>}<Link className="fh-compare-btn inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-bold" href="/#catalog"><Scale size={17}/> השוואת מוצרים</Link></div><p className="fh-muted mt-6 flex items-center gap-2 text-xs"><ShieldCheck size={16}/> הנתונים מוצגים לצורכי מידע; כדאי לאמת באתר היצרן לפני רכישה.</p></div>
    </div>
