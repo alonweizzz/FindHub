@@ -1,9 +1,6 @@
-export type Product = {id:string;name:string;brand:string;category:string;price:number;specs:Record<string,string>;emoji:string};
-export const products:Product[] = [
-{id:"phone-1",name:"טלפון דגם A",brand:"Demo",category:"סמארטפונים",price:1999,emoji:"📱",specs:{"מסך":"6.1 אינץ׳","אחסון":"128GB","סוללה":"4,500mAh"}},
-{id:"phone-2",name:"טלפון דגם B",brand:"Demo",category:"סמארטפונים",price:2499,emoji:"📱",specs:{"מסך":"6.7 אינץ׳","אחסון":"256GB","סוללה":"5,000mAh"}},
-{id:"audio-1",name:"אוזניות דגם A",brand:"Demo",category:"אוזניות",price:349,emoji:"🎧",specs:{"חיבור":"Bluetooth","סוללה":"30 שעות","ביטול רעשים":"כן"}},
-{id:"audio-2",name:"אוזניות דגם B",brand:"Demo",category:"אוזניות",price:499,emoji:"🎧",specs:{"חיבור":"Bluetooth","סוללה":"40 שעות","ביטול רעשים":"כן"}},
-{id:"mic-1",name:"מיקרופון דגם A",brand:"Demo",category:"מיקרופונים",price:299,emoji:"🎙️",specs:{"חיבור":"USB-C","כיווניות":"Cardioid","קצב דגימה":"48kHz"}},
-{id:"mic-2",name:"מיקרופון דגם B",brand:"Demo",category:"מיקרופונים",price:399,emoji:"🎙️",specs:{"חיבור":"USB-C","כיווניות":"Cardioid","קצב דגימה":"96kHz"}}
+export type Product={id:string;name:string;brand:string;category:string;price:number;specs:Record<string,string>;emoji:string;description?:string;sourceUrl?:string};
+export const products:Product[]=[
+{id:"iphone-16",name:"Apple iPhone 16",brand:"Apple",category:"סמארטפונים",price:0,emoji:"📱",description:"טלפון עם שבב A18 ומסך OLED בגודל 6.1 אינץ׳",sourceUrl:"https://support.apple.com/en-il/121029",specs:{"מסך":"6.1 אינץ׳ OLED","שבב":"A18","מצלמה ראשית":"48MP","אחסון":"128GB / 256GB / 512GB","קישוריות":"USB-C, 5G","משקל":"170 גרם"}},
+{id:"iphone-16-plus",name:"Apple iPhone 16 Plus",brand:"Apple",category:"סמארטפונים",price:0,emoji:"📱",description:"דגם בעל מסך גדול בגודל 6.7 אינץ׳",sourceUrl:"https://www.apple.com/il/iphone-16/specs/",specs:{"מסך":"6.7 אינץ׳ OLED","שבב":"A18","מצלמה ראשית":"48MP","אחסון":"128GB / 256GB / 512GB","קישוריות":"USB-C, 5G","משקל":"199 גרם"}},
+{id:"sony-wh1000xm5",name:"Sony WH-1000XM5",brand:"Sony",category:"אוזניות",price:0,emoji:"🎧",description:"אוזניות קשת אלחוטיות עם ביטול רעשים פעיל",sourceUrl:"https://www.sony.co.il/electronics/headband-headphones/wh-1000xm5/specifications",specs:{"חיבור":"Bluetooth 5.2","דרייבר":"30 מ״מ","סוללה":"עד 30 שעות עם ANC","ביטול רעשים":"פעיל","משקל":"כ-250 גרם","קודקים":"SBC, AAC, LDAC"}}
 ];
