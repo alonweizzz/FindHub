@@ -22,3 +22,37 @@ button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,inpu
 .fh-table th,.fh-table td{border-bottom:1px solid var(--border);color:var(--text)}.fh-table thead{background:var(--surface2)}
 @media(max-width:640px){.fh-search-action{padding:9px 12px}.fh-hero-title{line-height:1.2}.fh-filter-bar{gap:10px}.fh-category{padding:12px}.fh-category-icon{padding:9px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+/* UI 2.0 layout hardening */
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:clip}
+.fh-app{min-width:0;overflow-x:clip}
+.fh-nav{background:var(--surface)}
+.fh-hero{isolation:isolate}
+.fh-search{width:100%;min-width:0;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.fh-search input{width:100%;min-width:0;color:var(--text);border:0;outline:0}
+.fh-category{min-width:0;overflow:hidden;min-height:76px}
+.fh-category-icon{flex-shrink:0}
+.fh-filter-bar{min-width:0}
+.fh-product{min-width:0;display:flex;flex-direction:column}
+.fh-product>div:last-child{display:flex;flex:1;flex-direction:column}
+.fh-product-divider{margin-top:auto}
+.fh-compare-btn{transition:background .2s,color .2s}
+.fh-floating-compare{box-shadow:0 14px 44px rgba(0,0,0,.3)}
+.fh-table{border-collapse:collapse}
+.fh-table th{font-weight:700}
+.fh-mobile-menu a{padding:9px 4px}
+@media(max-width:640px){
+ .fh-hero{padding-top:64px;padding-bottom:70px}
+ .fh-search{gap:8px}
+ .fh-search input{font-size:14px}
+ .fh-search-action{font-size:12px}
+ .fh-category{min-height:72px}
+ .fh-category-icon{padding:8px}
+ .fh-category-icon svg{width:19px;height:19px}
+ .fh-filter-bar label{font-size:12px}
+ .fh-filter-bar select{max-width:100%;min-width:0}
+ .fh-product-visual{height:148px}
+ .fh-floating-compare{bottom:12px}
+}
+@media(max-width:380px){.fh-search-action svg{display:none}.fh-category{padding:10px;gap:5px}.fh-category-icon{padding:7px}}
